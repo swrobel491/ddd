@@ -1,0 +1,61 @@
+<html>
+
+<head>
+	<title>Slide Navbar</title>
+</head>
+
+<body>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+		<div class="signup">
+			<form (ngSubmit)="onRegister()" [formGroup]="registerForm()">
+				<label for="chk" aria-hidden="true">Join Now</label>
+				<div class="form-item">
+					<input type="text" pInputText id="signupUsername" formControlName="username" placeholder="Username"
+						required>
+					<small class="p-error"
+						*ngIf="registerForm().get('username')?.invalid && registerForm().get('username')?.dirty">
+						Username must be at least 3 letters</small>
+				</div>
+				<div class="form-item">
+					<input type="password" [feedback]="false" pPassword id="signupPassword" formControlName="password"
+						placeholder="Password" required>
+					<small class="p-error"
+						*ngIf="registerForm().get('password')?.invalid && registerForm().get('password')?.dirty">
+						Password must be at least 8 letters</small>
+				</div>
+				<div class="form-item">
+					<input type="password" [feedback]="false" pPassword id="signupConfirmPassword"
+						formControlName="confirmpassword" placeholder="Re Password" required>
+					<small class="p-error"
+						*ngIf="registerForm().get('confirmpassword')?.invalid && registerForm().get('confirmpassword')?.dirty || (registerForm().get('password')?.value !== registerForm().get('confirmpassword')?.value && registerForm().get('confirmpassword')?.dirty)">
+						Passwords do not match</small>
+				</div>
+				<button type="submit">Join Now</button>
+			</form>
+		</div>
+
+		<div class="login">
+			<form (ngSubmit)="onLogin()" [formGroup]="loginForm()">
+				<label for="chk" aria-hidden="true">Sign In</label>
+				<div class="form-item">
+					<input type="text" pInputText id="loginUsername" formControlName="username" placeholder="User name"
+						required>
+					<small class="p-error"
+						*ngIf="loginForm().get('username')?.invalid && loginForm().get('username')?.dirty">
+						Username must be at least 3 letters</small>
+				</div>
+				<div class="form-item">
+					<input type="password" [feedback]="false" pPassword id="loginPassword" formControlName="password"
+						placeholder="Password" required>
+					<small class="p-error"
+						*ngIf="loginForm().get('password')?.invalid && loginForm().get('password')?.dirty">
+						Password must be at least 8 letters</small>
+				</div>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<div style="margin-top: 135px;">
+    <p-table [value]="accounts">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="font-bold text-primary  text-center">Connected Google Account</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-account>
+            <tr>
+                <td class="font-bold ">{{ account.email }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

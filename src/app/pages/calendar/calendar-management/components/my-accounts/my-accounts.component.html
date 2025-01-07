@@ -1,0 +1,14 @@
+<p-table [value]="myAccounts">
+    <ng-template pTemplate="header">
+        <tr>
+            <th class="font-bold text-primary  text-center">My Accounts</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-account>
+        <tr>
+            <td class="font-bold ">{{ account.email }}</td>
+        </tr>
+    </ng-template>
+</p-table>
+<br />
+<p-button (onClick)="onAddAccount()" label="Link Your Google Account" rounded="true" />
