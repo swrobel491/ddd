@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class ApiHttpService {
-    protected rootUrl: string = 'http://191.101.0.94:5000/api';
+    protected rootUrl: string = 'https://191.101.0.94:5001/api';
 
     constructor(protected httpClient: HttpClient) { }
 
